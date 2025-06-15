@@ -23,7 +23,7 @@ if submit and query:
 
         if response.status_code == 200:
             result = response.json()
-            markdown = result[0].markdown
+            markdown = result[0]["markdown"]
             # file_url = result["file_url"]
             
             st.success("✅ Leads generated successfully!")
