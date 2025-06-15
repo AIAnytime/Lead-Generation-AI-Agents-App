@@ -19,7 +19,7 @@ if submit and query:
     webhook_url = "https://f4f7-49-205-255-244.ngrok-free.app/webhook/4e2f5b34-6d1b-4311-968a-75eb75311f75"
 
     try:
-        response = requests.post(webhook_url, json={"query": query})
+        response = requests.post(webhook_url, query)
 
         if response.status_code == 200:
             result = response.json()
