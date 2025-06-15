@@ -23,13 +23,21 @@ if submit and query:
 
         if response.status_code == 200:
             result = response.json()
+            markdown = result.get("markdown")
             file_url = result.get("file_url")
+            
             st.success("✅ Leads generated successfully!")
+            
+            if markdown:
+                st.markdown(markdown, unsafe_allow_html=True)
+            else:
+                st.warning("No leads were returned.")
 
             if file_url:
                 st.markdown(f"📥 [Download your leads file]({file_url})")
             else:
                 st.warning("File URL not available. Check your n8n output.")
+
         else:
             st.error(f"❌ Request failed: {response.status_code}")
 
