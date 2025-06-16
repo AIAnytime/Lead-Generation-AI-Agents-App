@@ -16,7 +16,7 @@ if submit and query:
     st.info("Sending request to AI pipeline...")
 
     # Replace with your actual deployed n8n webhook URL
-    webhook_url = "https://f4f7-49-205-255-244.ngrok-free.app/webhook/4e2f5b34-6d1b-4311-968a-75eb75311f75"
+    webhook_url = "https://f4f7-49-205-255-2"
 
     try:
         response = requests.post(webhook_url, json={"query": query})
